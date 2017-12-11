@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 95986396717065412}
   - component: {fileID: 58319467984484250}
   - component: {fileID: 50747733234837732}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flappy Bird Blue
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,8 +126,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -414818905
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: d290ea07a61bf430bbe3c7fba0e05e78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
