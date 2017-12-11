@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d290ea07a61bf430bbe3c7fba0e05e78
-timeCreated: 1512952689
+timeCreated: 1512958443
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -481,10 +481,10 @@ TextureImporter:
       name: Ground
       rect:
         serializedVersion: 2
-        x: 23
+        x: 25
         y: 214
-        width: 719
-        height: 238
+        width: 713
+        height: 234
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
