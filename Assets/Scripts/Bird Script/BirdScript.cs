@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BirdScript : MonoBehaviour {
+public class BirdScript : MonoBehaviour
+{
 
 	public static BirdScript instance;
 
@@ -20,13 +21,41 @@ public class BirdScript : MonoBehaviour {
 
 	public bool isAlive;
 
+
+	void Awake ()
+	{
+		if (instance == null) {
+			instance = this;
+		}
+		isAlive = true;
+	}
+
+
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		
+	void FixedUpdate ()
+	{
+		if (isAlive) {
+			Vector3 temp = transform.position;
+			temp.x += forwardSpeed * Time.deltaTime;
+			transform.position = temp;
+		}
+
+		if (didFlap) {
+			didFlap = false;
+			myRigidBody.velocity = new Vector2 (0, bounceSpeed);
+			anim.SetTrigger ("Flap");
+		}
+	}
+
+	 
+	public void FlapTheBird ()
+	{
+		didFlap = true;
 	}
 }
