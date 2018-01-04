@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BirdScript : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class BirdScript : MonoBehaviour
 
 	public bool isAlive;
 
+	private Button flatButton;
+
 
 	void Awake ()
 	{
@@ -28,6 +31,11 @@ public class BirdScript : MonoBehaviour
 			instance = this;
 		}
 		isAlive = true;
+
+		flatButton = GameObject.FindGameObjectWithTag ("FlapButton").GetComponent<Button> ();
+		flatButton.onClick.AddListener (() => FlapTheBird ());
+
+		SetCamerasX ();
 	}
 
 
@@ -44,16 +52,34 @@ public class BirdScript : MonoBehaviour
 			Vector3 temp = transform.position;
 			temp.x += forwardSpeed * Time.deltaTime;
 			transform.position = temp;
-		}
 
-		if (didFlap) {
-			didFlap = false;
-			myRigidBody.velocity = new Vector2 (0, bounceSpeed);
-			anim.SetTrigger ("Flap");
+			if (didFlap) {
+				didFlap = false;
+				myRigidBody.velocity = new Vector2 (0, bounceSpeed);
+				anim.SetTrigger ("Flap");
+			}
+
+			if (myRigidBody.velocity.y >= 0) {
+				transform.rotation = Quaternion.Euler (0, 0, 0);
+			} else {
+				float angle = 0;
+				angle = Mathf.Lerp (0, -90, -myRigidBody.velocity.y / 7);
+				transform.rotation = Quaternion.Euler (0, 0, angle);
+			}
 		}
+			
 	}
 
-	 
+	void SetCamerasX ()
+	{
+		CameraScript.offsetX = (Camera.main.transform.position.x - transform.position.x) - 1f;
+	}
+
+	public float GetPositionX ()
+	{
+		return transform.position.x;
+	}
+
 	public void FlapTheBird ()
 	{
 		didFlap = true;
