@@ -6,7 +6,7 @@ public class PipeCollector : MonoBehaviour
 {
 
 	private GameObject[] pipeHolders;
-	private float distance = 2.5f;
+	private float distance = 3.5f;
 	private float lastPipesX;
 	private float pipeMin = -1.5f;
 	private float pipeMax = 2.4f;
@@ -24,6 +24,7 @@ public class PipeCollector : MonoBehaviour
 		}
 
 		lastPipesX = pipeHolders [0].transform.transform.position.x;
+
 		for (int i = 1; i < pipeHolders.Length; i++) {
 			if (lastPipesX < pipeHolders [i].transform.position.x) {
 				lastPipesX = pipeHolders [i].transform.position.x;
