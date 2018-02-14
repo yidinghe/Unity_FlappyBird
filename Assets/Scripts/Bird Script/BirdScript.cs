@@ -24,6 +24,13 @@ public class BirdScript : MonoBehaviour
 
 	private Button flatButton;
 
+	[SerializeField]
+	private AudioSource audioSource;
+
+	[SerializeField]
+	private AudioClip flapClick, pointClip, diedClip;
+
+	public int score;
 
 	void Awake ()
 	{
@@ -31,7 +38,7 @@ public class BirdScript : MonoBehaviour
 			instance = this;
 		}
 		isAlive = true;
-
+		score = 0;
 		flatButton = GameObject.FindGameObjectWithTag ("FlapButton").GetComponent<Button> ();
 		flatButton.onClick.AddListener (() => FlapTheBird ());
 
@@ -56,6 +63,7 @@ public class BirdScript : MonoBehaviour
 			if (didFlap) {
 				didFlap = false;
 				myRigidBody.velocity = new Vector2 (0, bounceSpeed);
+				audioSource.PlayOneShot (flapClick);
 				anim.SetTrigger ("Flap");
 			}
 
@@ -83,5 +91,26 @@ public class BirdScript : MonoBehaviour
 	public void FlapTheBird ()
 	{
 		didFlap = true;
+	}
+
+	//If both collision target and source are not set to isTrigger, need to use OnCollisionEnter2D
+	void OnCollisionEnter2D (Collision2D target)
+	{
+		if (target.gameObject.tag == "Ground" || target.gameObject.tag == "Pipe") {
+			if (isAlive) {
+				isAlive = false;
+				anim.SetTrigger ("Bird Died");
+				audioSource.PlayOneShot (diedClip);
+			}
+		}
+	}
+
+	//Eiter collision target or source set to isTrigger
+	void OnTriggerEnter2D (Collider2D target)
+	{
+		if (target.tag == "PipeHolder") {
+			audioSource.PlayOneShot (pointClip);
+			score++;
+		}
 	}
 }

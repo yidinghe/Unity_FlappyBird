@@ -11,6 +11,7 @@ public class BGCollector : MonoBehaviour
 	private float lastBGX;
 	private float lastGroundX;
 
+
 	void Awake ()
 	{
 
