@@ -40,13 +40,15 @@ public class MenuController : MonoBehaviour
 
 	public void ChangeBird ()
 	{
-		if (GameController.instance.GetSelectedBird () == 0) {
+		int selectedBird = GameController.instance.GetSelectedBird ();
+
+		if (selectedBird == 0) {
 			if (isGreenBirdUnlocked) {
 				birds [0].SetActive (false);
 				GameController.instance.SetSelectedBird (1);
 				birds [GameController.instance.GetSelectedBird ()].SetActive (true);
 			}
-		} else if (GameController.instance.GetSelectedBird () == 1) {
+		} else if (selectedBird == 1) {
 			if (isRedBirdUnlocked) {
 				birds [1].SetActive (false);
 				GameController.instance.SetSelectedBird (2);
@@ -56,7 +58,7 @@ public class MenuController : MonoBehaviour
 				GameController.instance.SetSelectedBird (0);
 				birds [GameController.instance.GetSelectedBird ()].SetActive (true);
 			}
-		} else if (GameController.instance.GetSelectedBird () == 2) {
+		} else if (selectedBird == 2) {
 			birds [2].SetActive (false);
 			GameController.instance.SetSelectedBird (0);
 			birds [GameController.instance.GetSelectedBird ()].SetActive (true);
