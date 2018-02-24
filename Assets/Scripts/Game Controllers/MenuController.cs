@@ -42,6 +42,10 @@ public class MenuController : MonoBehaviour
 		SceneFader.instance.FadeIn ("GamePlay");
 	}
 
+	public void QuitGame(){
+		Application.Quit ();
+	}
+
 	public void ChangeBird ()
 	{
 		int selectedBird = GameController.instance.GetSelectedBird ();
