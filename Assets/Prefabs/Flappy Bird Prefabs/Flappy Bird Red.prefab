@@ -25,13 +25,13 @@ GameObject:
   - component: {fileID: 50424351260620184}
   - component: {fileID: 82269058375915374}
   - component: {fileID: 114047879134507190}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flappy Bird Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4770092227294640
 Transform:
   m_ObjectHideFlags: 1
