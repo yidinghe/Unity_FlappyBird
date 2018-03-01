@@ -16,8 +16,7 @@ public class MenuController : MonoBehaviour
 	{
 		MakeInstance ();
 	}
-
-	// Use this for initialization
+		
 	void Start ()
 	{
 		birds [GameController.instance.GetSelectedBird ()].SetActive (true);
@@ -33,7 +32,6 @@ public class MenuController : MonoBehaviour
 
 	void CheckIfBirdsAreUnlocked ()
 	{
-		
 		isGreenBirdUnlocked = GameController.instance.IsGreenBirdUnlocked ();
 		isRedBirdUnlocked = GameController.instance.IsRedBirdUnlocked ();
 	}

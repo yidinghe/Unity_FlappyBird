@@ -11,8 +11,6 @@ public class PipeCollector : MonoBehaviour
 	private float pipeMin = -1.5f;
 	private float pipeMax = 2.4f;
 
-
-	// Use this for initialization
 	void Awake ()
 	{
 		pipeHolders = GameObject.FindGameObjectsWithTag ("PipeHolder");
