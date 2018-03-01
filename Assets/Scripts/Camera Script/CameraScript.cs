@@ -7,13 +7,6 @@ public class CameraScript : MonoBehaviour
 
 	public static float offsetX;
 
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
-	
-	// Update is called once per frame
 	void Update ()
 	{
 		if (BirdScript.instance != null) {

@@ -17,13 +17,7 @@ public class GameController : MonoBehaviour
 		MakeSingleton ();
 		IsTheGameStartedForTheFirstTime ();
 	}
-
-	// Use this for initialization
-	void Start ()
-	{
 		
-	}
-
 	void MakeSingleton ()
 	{
 		if (instance != null) {
