@@ -10,7 +10,7 @@ License
 
 Study with the Udemy Unity Class.
 
-Also, all the icons are under open source licnece.
+Also, all the icons are under open source licence.
 Can be used for commercial.
 
 ## Demos
