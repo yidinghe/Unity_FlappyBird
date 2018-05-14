@@ -16,4 +16,4 @@ Can be used for commercial.
 ## Demos
 ![demo_1](Resources/demo_1.PNG)
 ![demo_2](Resources/demo_2.PNG)
-![demo_3](Resources/demo_2.PNG)
+![demo_3](Resources/demo_3.PNG)
